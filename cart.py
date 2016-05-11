@@ -13,12 +13,10 @@ deltat = .01
 gdisplay(x=100, y=500, xtitle='time (sec)', ytitle= 'position (cyan), velocity (red)')
 positioncurve = gcurve(color=color.cyan)
 velocitycurve = gcurve(color=color.red)
-k=4 #spring constant
+k=4#spring constant
 sprL=(start-.05)-.1 #sets position of left end of spring
-spring=helix(pos=vector(sprL,0,0), axis=vector((cart.x-.05)-sprL,0,0),radius=.02,color=color.yellow)#
-
-#defining symbol attributes
-
+spring=helix(pos=vector(sprL+.1,0,0), axis=vector((cart.x-.05)-sprL,0,0),radius=.02,color=color.yellow)#
+#the position was shifted to the start of the track so that it looked a bit better.
 cart.mass=.80
 cart.vel = vector(.8,0,0)
 cart.force = -k *(cart.x)*vector(1,0,0) #spring force
@@ -37,18 +35,20 @@ while cart.x<(end+0.5) and cart.x>(start-0.5):
     t = t + deltat
     positioncurve.plot(pos=(t,cart.x))
     velocitycurve.plot (pos=(t,cart.vel.x))
-    print "cart.x=", cart.x
-    print "cart.vel.x=", cart.vel
-    print "cart.force.x=", cart.force
-    print "k=", k
-    print "elapsed time=", t
 
-    #THE FOLLOWING IS FOR TROUBLESHOOTING PURPOSES. IGNORE.
-    #cart.x=-0.43189
-    #cart.vel.x=.822
-    #cart.foce.x=1.727756
-    #k=4
-    #elapsed time=.01
+#TROUBLESHOOTING: IGNORE THE FOLLOWING
+   # print "cart.x=", cart.x
+   # print "cart.vel.x=", cart.vel
+   # print "cart.force.x=", cart.force
+   # print "k=", k
+   # print "elapsed time=", t
+
+ #TROUBLESHOOTING DATA
+ #cart.x=-0.43189
+ #cart.vel.x=.822
+ #cart.foce.x=1.727756
+ #k=4
+ #elapsed time=.01
 
 
 

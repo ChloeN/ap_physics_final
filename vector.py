@@ -16,4 +16,4 @@ bt=arrow(pos=vector(baseball.pos), axis=vector(tennisball.pos-baseball.pos), col
 print tennisball.pos
 
 #for the questions in 12: the axis should be tennisball.pos-baseball.pos and the position
-#should be baseball.pos.(edit: it works!)
+#should be baseball.pos
